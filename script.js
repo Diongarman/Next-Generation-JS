@@ -6,7 +6,7 @@ let i = 23;
 for(let i = 0; i<5; i++) {
     console.log(i)
 }
-console.log(i)
+//console.log(i)
 
 //Comments
 
@@ -68,9 +68,27 @@ ages6 = years.map((year) => {
     return age
 })
 
-console.log(ages6);
+//console.log(ages6); 
 
 
 
 ////////////////////
 ////Lesson: Arrow functions and lexical 'this'
+
+//ES5
+
+var box5 = {
+
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+
+        document.querySelector('.green').addEventListener('click', function() {
+            var str = 'This is box number' + this.position + ' and it is ' + this.color
+
+            alert(str);
+        })
+    }
+}
+
+box5.clickMe();
