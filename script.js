@@ -210,7 +210,7 @@ for(var j = 0; j< boxesArr5.length; j++) {
 //ES6
 
 for (const cur of Array.from(boxes)) {
-    if (cur.className === "box blue") {
+    if (cur.className.includes('blue')) {
         continue;
     }
     cur.textContent = "I CHANGED TO BLUEFACE";
