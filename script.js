@@ -177,14 +177,33 @@ console.log(a, b)
 //////////////////////////////////
 //LECTURE: Arrays
 
+
 const boxes = document.querySelectorAll('.box');
 
 //ES5
+
 var boxesArr5 = Array.prototype.slice.call(boxes);
 
 boxesArr5.forEach(function(cur) {
     cur.style.backgroundColor = 'dodgerblue';
 });
 
+
+
+
+Array.from(boxes).forEach(element => 
+    element.style.backgroundColor = 
+    'dodgerblue');
+
+
+//ES5
+
+for(var j = 0; j< boxesArr5.length; j++) {
+    if (boxesArr5[j].className === "box blue") {
+        continue;
+    }
+
+    boxesArr5[j].textContent = "I CHANGED TO BLUE";
+}
 
  
