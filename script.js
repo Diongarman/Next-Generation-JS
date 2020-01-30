@@ -197,13 +197,24 @@ Array.from(boxes).forEach(element =>
 
 
 //ES5
-
+/*
 for(var j = 0; j< boxesArr5.length; j++) {
     if (boxesArr5[j].className === "box blue") {
         continue;
     }
 
     boxesArr5[j].textContent = "I CHANGED TO BLUE";
+};
+*/
+
+//ES6
+
+for (const cur of Array.from(boxes)) {
+    if (cur.className === "box blue") {
+        continue;
+    }
+    cur.textContent = "I CHANGED TO BLUEFACE";
 }
+
 
  
