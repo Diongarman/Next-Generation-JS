@@ -111,4 +111,70 @@ const box6 = {
     }
 }
 
-box6.clickMe();
+//box6.clickMe();
+
+function Person(name) {
+    this.name = name;
+};
+//ES5
+Person.prototype.myFriends5 = function (friends) {
+
+    var arr = friends.map(function(el) {
+        return this.name + ' is friends with ' + el;
+    }
+        .bind(this)
+    );
+    console.log(arr)
+};
+
+//var friends = ['Ricky', 'Ashley', 'Gren', 'Nick'];
+//new Person('Dion').myFriends5(friends);
+
+
+//ES6
+Person.prototype.myFriends6 = (friends) => {
+
+    let arr = friends.map(el => `${this.name} + ' is friends with ' + ${el}`);
+
+    console.log(arr)
+};
+
+const friends = ['Ricky', 'Ashley', 'Gren', 'Nick'];
+new Person('Dion').myFriends6(friends);
+
+
+
+
+///////////////////////////
+//Lecture Destructuring
+
+//ES5
+
+var dion = ['Dion', 30];
+//var name = dion[0];
+//var age = dion[1];
+
+//ES6
+
+const [name, age] = dion;
+
+console.log(name, age)
+
+const obj = {
+    firstName: "Chuck",
+    secondName: "Norris"
+};
+
+const {firstName, secondName} = obj;
+console.log(firstName, secondName)
+
+//if you want different key names
+
+const {firstName: a, secondName: b} = obj;
+
+console.log(a, b)
+
+
+
+
+ 
