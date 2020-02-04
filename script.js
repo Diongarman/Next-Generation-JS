@@ -214,15 +214,20 @@ function addFourAges(a, b, c, d) {
   return a + b + c + d;
 }
 
-//ES5
-
 var ages = [18, 30, 12, 21];
 
+//ES5
 var sum5 = addFourAges.apply(null, ages);
 console.log(sum5);
 
 //ES6
-
 const sum6 = addFourAges(...ages);
-
 console.log('using spread operator: ', sum6);
+
+//using spreads to join arrays
+
+const family1 = ['Mary', 'John', 'Stacey'];
+const family2 = ['Shaniqua', 'Devon', 'Deontay'];
+
+const bigFamily = [...family1, 'Baby Tyrell', ...family2];
+console.log(bigFamily);
