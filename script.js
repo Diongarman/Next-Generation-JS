@@ -224,10 +224,20 @@ console.log(sum5);
 const sum6 = addFourAges(...ages);
 console.log('using spread operator: ', sum6);
 
-//using spreads to join arrays
+//use case: using spreads to join arrays
 
 const family1 = ['Mary', 'John', 'Stacey'];
 const family2 = ['Shaniqua', 'Devon', 'Deontay'];
 
 const bigFamily = [...family1, 'Baby Tyrell', ...family2];
 console.log(bigFamily);
+
+//Use case: Nodelist
+
+const h = document.querySelector('h1');
+
+const boxNodes = document.querySelectorAll('.box');
+
+const nodelist = [h, ...boxNodes];
+
+Array.from(nodelist).forEach(cur => (cur.style.color = 'purple'));
