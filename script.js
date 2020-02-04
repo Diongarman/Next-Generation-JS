@@ -206,3 +206,23 @@ console.log(ages[full.indexOf(true)]);
 
 console.log(ages.findIndex(curr => curr >= 18));
 console.log(ages.find(curr => curr >= 18));
+
+/////////////////////////////
+//Lecture: Spread operator
+
+function addFourAges(a, b, c, d) {
+  return a + b + c + d;
+}
+
+//ES5
+
+var ages = [18, 30, 12, 21];
+
+var sum5 = addFourAges.apply(null, ages);
+console.log(sum5);
+
+//ES6
+
+const sum6 = addFourAges(...ages);
+
+console.log('using spread operator: ', sum6);
