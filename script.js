@@ -241,3 +241,26 @@ const boxNodes = document.querySelectorAll('.box');
 const nodelist = [h, ...boxNodes];
 
 Array.from(nodelist).forEach(cur => (cur.style.color = 'purple'));
+
+/////////////////////
+//Lecture: Rest Parameters
+
+//ES5
+
+function isFullAge5() {
+  var argsArray = Array.prototype.slice.call(arguments);
+
+  argsArray.forEach(function(cur) {
+    console.log(2020 - cur >= 25);
+  });
+}
+
+//isFullAge5(1990, 1999, 1965);
+
+//ES6
+
+function isFullAge6(...years) {
+  years.forEach(cur => console.log(2020 - cur >= 25));
+}
+
+isFullAge6(1990, 1999, 1965, 2020);
