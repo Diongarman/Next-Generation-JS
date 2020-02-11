@@ -247,20 +247,20 @@ Array.from(nodelist).forEach(cur => (cur.style.color = 'purple'));
 
 //ES5
 
-function isFullAge5() {
-  var argsArray = Array.prototype.slice.call(arguments);
+function isFullAge5(limit) {
+  var argsArray = Array.prototype.slice.call(arguments, 1);
 
   argsArray.forEach(function(cur) {
-    console.log(2020 - cur >= 25);
+    console.log(2020 - cur >= limit);
   });
 }
 
-//isFullAge5(1990, 1999, 1965);
+// isFullAge5(25, 1990, 1999, 1965);
 
 //ES6
 
-function isFullAge6(...years) {
-  years.forEach(cur => console.log(2020 - cur >= 25));
+function isFullAge6(limit, ...years) {
+  years.forEach(cur => console.log(2020 - cur >= limit));
 }
 
-isFullAge6(1990, 1999, 1965, 2020);
+isFullAge6(25, 1990, 1999, 1965, 2020);
